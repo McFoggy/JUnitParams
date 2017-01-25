@@ -106,7 +106,7 @@ public class TestMethod {
                 String uniqueMethodId = Utils.uniqueMethodId(i, paramSet, name());
 
                 parametrised.addChild(
-                        Description.createTestDescription(testClass().getName(), name, uniqueMethodId)
+                    TestMethodDescriptionBuilder.REFLECTION_PRIVATE_JUNIT.build(testClass(), name, uniqueMethodId, frameworkMethodAnnotations.allAnnotations())
                 );
             }
             return parametrised;
